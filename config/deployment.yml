@@ -1,0 +1,8 @@
+- name: config_local
+  hosts: localhost
+  user: damiao
+  become: true
+  connection: local
+
+  roles:
+    - role: config_local

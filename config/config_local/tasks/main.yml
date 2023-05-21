@@ -1,0 +1,35 @@
+---
+# tasks file for config_local
+
+- name: Common
+  import_tasks: common.yml
+
+- name: Chrome
+  import_tasks: chrome.yml
+
+- name: Docker
+  import_tasks: docker.yml
+
+- name: Terraform
+  import_tasks: terraform.yml
+
+- name: Terragrunt
+  import_tasks: terragrunt.yml
+
+- name: Git
+  import_tasks: git.yml
+
+- name: Forticlient
+  import_tasks: forticlient.yml
+
+- name: Zoom
+  import_tasks: zoom.yml
+
+- name: Snap Store
+  import_tasks: snap.yml
+
+- name: Certificados
+  import_tasks: ca-certificates.yml
+
+- name: nosqlbooster4mongo
+  import_tasks: nosqlbooster.yml

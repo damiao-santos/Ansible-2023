@@ -1,0 +1,10 @@
+- name: Baixar o arquivo do FortiClient VPN
+  get_url:
+    url: "https://links.fortinet.com/forticlient/deb/vpnagent"
+    dest: "/tmp/forticlient.deb"
+
+- name: Instalar o FortiClient VPN
+  apt:
+    deb: "/tmp/forticlient.deb"
+    state: present
+

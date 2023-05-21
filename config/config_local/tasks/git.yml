@@ -1,0 +1,4 @@
+- name: Instalar o Git
+  apt:
+    name: git-all
+    state: present

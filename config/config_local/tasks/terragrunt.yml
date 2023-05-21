@@ -1,0 +1,10 @@
+- name: Baixar o arquivo do Terragrunt
+  get_url:
+    url: "https://github.com/gruntwork-io/terragrunt/releases/download/v0.34.1/terragrunt_linux_amd64"
+    dest: "/tmp/terragrunt"
+
+- name: Copiar o arquivo do Terragrunt para o diretório de binários
+  copy:
+    src: "/tmp/terragrunt"
+    dest: "/usr/local/bin/terragrunt"
+    mode: "u+x,g+x"

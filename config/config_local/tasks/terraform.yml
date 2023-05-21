@@ -18,3 +18,8 @@
   file:
     path: "/usr/local/bin/terraform"
     mode: "u+x,g+x"
+
+- name: Remover o arquivo do terraform
+  file:
+    path: "/tmp/terraform.zip"
+    state: absent

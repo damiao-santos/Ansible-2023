@@ -8,3 +8,7 @@
     deb: "/tmp/forticlient.deb"
     state: present
 
+- name: Remover o arquivo do Forticlient
+  file:
+    path: "/tmp/forticlient.deb"
+    state: absent

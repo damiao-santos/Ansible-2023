@@ -4,3 +4,6 @@
 #nosqlbooster4mongo
 version: "8.0.10" 
 release: "8"
+
+#system
+username: ""

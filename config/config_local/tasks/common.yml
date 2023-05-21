@@ -3,3 +3,7 @@
     name: "*"
     state: latest
 
+- name: Install prerequisites for Ansible to install .deb via apt module
+  apt:
+    name:
+    - xz-utils

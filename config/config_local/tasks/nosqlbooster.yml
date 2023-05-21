@@ -15,7 +15,7 @@
 
 - name: Criar Diretorio Aplicativos
   ansible.builtin.file:
-    path: /home/damiao/Aplicativos/
+    path: /home/{{ username }}/Aplicativos/
     state: directory
     mode: '0777'
 

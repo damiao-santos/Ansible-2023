@@ -20,4 +20,4 @@
     mode: '0777'
 
 - name: Mover o arquivo para a pasta de aplicativos
-  command: mv /tmp/NoSQLBooster.AppImage /home/damiao/Aplicativos/NoSQLBooster.AppImage
+  command: mv /tmp/NoSQLBooster.AppImage /home/{{ username }}/Aplicativos/NoSQLBooster.AppImage

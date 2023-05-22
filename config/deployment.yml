@@ -1,0 +1,11 @@
+- name: config_local
+  hosts: localhost
+  user: "{{ username }}"
+  become: true
+  become_method: sudo
+  connection: local
+
+  roles:
+    - role: config_local
+
+#ansible-playbook -k -i localhost --extra-vars="username= gituser= gitemail=" deployment.yml

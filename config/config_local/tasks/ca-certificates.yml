@@ -1,0 +1,32 @@
+- name: Copiar certificado fortinet para /usr/local/share/ca-certificates/
+  copy:
+    src: "/home/{{ username }}/Documentos/Fortinet_CA_SSL_RJ.crt"
+    dest: "/usr/local/share/ca-certificates/"
+
+- name: Copiar certificado fortinet para /usr/share/ca-certificates/
+  copy:
+    src: "/home/{{ username }}/Documentos/Fortinet_CA_SSL_RJ.crt"
+    dest: "/usr/share/ca-certificates/"
+
+- name: Copiar certificado *.ativa para /usr/local/share/ca-certificates/
+  copy:
+    src: "/home/{{ username }}/Documentos/_.ativainvestimentos.com.br.crt"
+    dest: "/usr/local/share/ca-certificates/"
+
+- name: Copiar certificado *.ativa para /usr/share/ca-certificates/
+  copy:
+    src: "/home/{{ username }}/Documentos/_.ativainvestimentos.com.br.crt"
+    dest: "/usr/share/ca-certificates/"
+
+- name: Copiar certificado forticlient para /usr/local/share/ca-certificates/
+  copy:
+    src: "/home/{{ username }}/Documentos/cer_2023_composto.crt"
+    dest: "/usr/local/share/ca-certificates/"
+
+- name: Copiar certificado forticlient para /usr/share/ca-certificates/
+  copy:
+    src: "/home/{{ username }}/Documentos/cer_2023_composto.crt"
+    dest: "/usr/share/ca-certificates/"
+
+- name: Executar o comando update-ca-certificates
+  command: update-ca-certificates

@@ -1,0 +1,23 @@
+- name: Baixar o arquivo do NoSQLBooster
+  get_url:
+    url: "https://s3.nosqlbooster.com/download/releasesv{{ release }}/nosqlbooster4mongo-{{ version }}.AppImage"
+    dest: "/tmp/NoSQLBooster.AppImage"
+
+- name: Dar permissão de execução para o arquivo
+  file:
+    path: "/tmp/NoSQLBooster.AppImage"
+    mode: "0777"
+
+- name: Instalar o Fuse
+  apt:
+    name: fuse
+    state: present
+
+- name: Criar Diretorio Aplicativos
+  ansible.builtin.file:
+    path: /home/{{ username }}/Aplicativos/
+    state: directory
+    mode: '0777'
+
+- name: Mover o arquivo para a pasta de aplicativos
+  command: mv /tmp/NoSQLBooster.AppImage /home/{{ username }}/Aplicativos/NoSQLBooster.AppImage

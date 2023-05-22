@@ -1,0 +1,14 @@
+- name: Baixar o arquivo do Zoom
+  get_url:
+    url: "https://zoom.us/client/latest/zoom_amd64.deb"
+    dest: "/tmp/zoom.deb"
+
+- name: Instalar o Zoom
+  apt:
+    deb: "/tmp/zoom.deb"
+    state: present
+
+- name: Remover o arquivo do Zoom
+  file:
+    path: "/tmp/zoom.deb"
+    state: absent

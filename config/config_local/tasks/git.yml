@@ -1,0 +1,10 @@
+- name: Instalar o Git
+  apt:
+    name: git-all
+    state: present
+
+- name: Setar user name para commit
+  command: git config --global user.name "{{ gituser }}"
+
+- name: Setar user email para commit
+  command: git config --global user.email "{{ gitemail }}"

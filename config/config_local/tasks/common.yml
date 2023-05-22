@@ -1,0 +1,14 @@
+- name: Update all packages to their latest version
+  ansible.builtin.apt:
+    name: "*"
+    state: latest
+
+- name: Install prerequisites for Ansible to install .deb via apt module
+  apt:
+    name:
+    - xz-utils
+
+- name: instalar desktop portal gnome
+  apt:
+    name:
+    - xdg-desktop-portal-gnome

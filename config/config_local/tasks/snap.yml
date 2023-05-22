@@ -1,0 +1,18 @@
+- name: Instalar Slack da Snap
+  snap:
+    name: slack
+    channel: latest/edge
+    state: present
+
+- name: Instalar Visual Code da Snap
+  snap:
+    name: code
+    classic: yes
+    channel: latest/edge
+    state: present
+
+- name: Instalar KeePassXC da Snap
+  snap:
+    name: keepassxc
+    channel: latest/edge
+    state: present

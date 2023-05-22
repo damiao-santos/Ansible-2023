@@ -1,0 +1,18 @@
+- name: Adicionar a chave do repositório do Google Chrome
+  apt_key:
+    url: "https://dl.google.com/linux/linux_signing_key.pub"
+    state: present
+
+- name: Adicionar o repositório do Google Chrome
+  apt_repository:
+    repo: "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+    state: present
+
+- name: Atualizar a lista de pacotes
+  apt:
+    update_cache: yes
+
+- name: Instalar o Google Chrome
+  apt:
+    name: google-chrome-stable
+    state: present

@@ -1,0 +1,29 @@
+- name: Instalar pacotes necessários para o Docker
+  apt:
+    name: ['apt-transport-https', 'ca-certificates', 'curl', 'gnupg-agent', 'software-properties-common']
+    state: present
+
+- name: Adicionar a chave do repositório do Docker
+  apt_key:
+    url: "https://download.docker.com/linux/ubuntu/gpg"
+    state: present
+
+- name: Adicionar o repositório do Docker
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+    state: present
+
+- name: Atualizar a lista de pacotes
+  apt:
+    update_cache: yes
+
+- name: Instalar o Docker
+  apt:
+    name: docker-ce
+    state: present
+
+- name: Adicionar o usuário atual ao grupo docker
+  user:
+    name: "{{ ansible_user }}"
+    groups: docker
+    append: yes
